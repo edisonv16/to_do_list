@@ -1,0 +1,5 @@
+<form class="d-flex">
+    <input #buscarTexto class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" (keyup.enter)="buscarProducto(buscarTexto.value)">
+    <button (click)="buscarProducto(buscarTexto.value)"
+     class="btn btn-outline-success" type="button">Buscar</button>
+  </form>

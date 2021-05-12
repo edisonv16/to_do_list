@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Prueba Angular</a>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/tareas" *ngIf="(auth.isAuthenticated$ | async)">lista</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/protegida" *ngIf="(auth.isAuthenticated$ | async)">protegido</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+
+          <button class="btn btn-outline-primary"
+          (click)="auth.loginWithRedirect()"
+          *ngIf="!(auth.isAuthenticated$ | async)"
+           >Ingresar</button>
+
+          <button 
+          (click)="auth.logout()"
+          *ngIf="(auth.isAuthenticated$ | async)"
+          class="btn btn-outline-danger">salir </button>
+        </span>
+      </div>
+    </div>
+  </nav>

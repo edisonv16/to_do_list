@@ -1,0 +1,45 @@
+<header class="bg-success mb-5">
+    <div class="container">
+        <section>
+            <button (click)="reloadCurrentPage()" class="btn btn-light fw-light me-2 bnt-guardar ms-5">
+                <i class="fa fa-sync "></i>
+                Actualizar
+            </button>
+        </section>
+        <section>
+            <div class="row animated fadeIn faster">
+                <div class="col m-5">
+                    <form class="d-flex" (ngSubmit)="guardar (f)"
+                    #f="ngForm">
+                        <div class="form-group w-100">
+                            <label class="text-white d-block">
+                                <p class="fw-light text-left">Titilo de la tarea</p>
+                            </label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="titilo"
+                                name="nombre"
+                                [(ngModel)]="tarea.nombre"
+                                required>
+                        </div>
+                        <div class="form-group w-100 text-center">
+                            <input class="form-check-input me-2 mt-5" type="checkbox" id="estado" [(ngModel)]="tarea.estado" name="estado">
+                            <label class="form-check-label text-white fw-light" for="flexCheckDefault">
+                              tarea completada
+                            </label>
+                          </div>
+                        <div class="form-group text-center w-100">
+                            <button  class="btn btn-warning fw-light me-2 bnt-guardar" type="submit">
+                                <i class="fa fa-save "></i>
+                                Guardar Tarea
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</header>
+
+
